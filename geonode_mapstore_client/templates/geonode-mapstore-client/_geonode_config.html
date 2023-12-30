@@ -1,9 +1,10 @@
+{% load static %}
 {% load client_lib_tags %}
 {% load base_tags %}
 {% load get_menu_json %}
 {% load apikey %}
 {% load get_search_services %}
-{% load static %}
+
 {% comment %}
     app and map configuration need to be normalized
 {% endcomment %}
@@ -135,12 +136,12 @@
             languageCode: '{{ LANGUAGE_CODE }}',
             languages: languages,
             translationsPath: translationsPath,
-            resourceId: '{{ resource.pk|default:"" }}',
-            resourceType: '{{ resource.resource_type|default:"" }}',
+            resourceId: '{{ resource.pk|default: "" }}',
+            resourceType: '{{ resource.resource_type|default: "" }}',
             isEmbed: isEmbed,
             pluginsConfigKey: pluginsConfigKey,
             pluginsConfigPatchRules: [...searchServicesPatchRules, ...pluginsConfigPatchRules],
-            apikey: '{%if user_apikey %}{{user_apikey}}{% else %}{% endif %}',
+            apikey: '{% if user_apikey %}{{user_apikey}}{% else %}{% endif %}',
             localConfig: {
                 proxyUrl: {
                     url: '{{UPDATED_PROXY_URL|safe }}',
@@ -195,7 +196,7 @@
                     upload: {
                         supportedDatasetFileTypes: supportedDatasetFileTypes
                     },
-                    staticPath: "{% static '' %}",
+                    staticPath: siteUrl + '/static/',
                     catalogHomeRedirectsTo: catalogHomeRedirectsTo,
                     catalogPagePath: catalogPagePath
                 }
