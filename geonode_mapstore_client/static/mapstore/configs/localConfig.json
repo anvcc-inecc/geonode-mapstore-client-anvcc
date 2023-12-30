@@ -4,8 +4,8 @@
         "useCORS": []
     },
     "geoNodeApi": {
-        "endpointV1": "/api",
-        "endpointV2": "/api/v2"
+        "endpointV1": "/geonode/api",
+        "endpointV2": "/geonode/api/v2"
     },
     "mapLayout": {
         "preview": {
