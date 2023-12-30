@@ -249,7 +249,7 @@ function ResourcesGrid({
                     labelId: 'gnhome.createDataset',
                     value: 'layer',
                     type: 'link',
-                    href: '/createlayer/',
+                    href: '/geonode/createlayer/',
                     disableIf: "{(state('settings') && state('settings').createLayer) ? false : true}"
                 },
                 {
@@ -274,7 +274,7 @@ function ResourcesGrid({
                     labelId: 'gnhome.remoteServices',
                     value: 'remote',
                     type: 'link',
-                    href: '/services/?limit=5'
+                    href: '/geonode/services/?limit=5'
                 }
             ]
         },
