@@ -2083,7 +2083,7 @@
                 "cfg": {
                     "measurementAnnotationEdit": false,
                     "geodesic": false,
-                    "symbolsPath": "/static/mapstore/symbols/"
+                    "symbolsPath": "/geonode/static/mapstore/symbols/"
                 }
             },
             {
