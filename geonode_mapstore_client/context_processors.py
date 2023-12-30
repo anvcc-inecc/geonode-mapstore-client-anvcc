@@ -42,18 +42,20 @@ def resource_urls(request):
         ),
         "ALLOWED_DOCUMENT_TYPES": getattr(settings, "ALLOWED_DOCUMENT_TYPES", []),
         "LANGUAGES": getattr(settings, "LANGUAGES", []),
-        "TRANSLATIONS_PATH": getattr(
+        "TRANSLATIONS_PATH_BAK": getattr(
             settings,
             "MAPSTORE_TRANSLATIONS_PATH",
             ["/geonode/static/mapstore/ms-translations", "/geonode/static/mapstore/gn-translations"],
         ),
+        "TRANSLATIONS_PATH": ["/geonode/static/mapstore/ms-translations", "/geonode/static/mapstore/gn-translations"],
         "PROJECTION_DEFS": getattr(settings, "MAPSTORE_PROJECTION_DEFS", []),
         "PLUGINS_CONFIG_PATCH_RULES": getattr(
             settings, "MAPSTORE_PLUGINS_CONFIG_PATCH_RULES", []
         ),
-        "EXTENSIONS_FOLDER_PATH": getattr(
+        "EXTENSIONS_FOLDER_PATH_BAK": getattr(
             settings, "MAPSTORE_EXTENSIONS_FOLDER_PATH", "/geonode/static/mapstore/extensions/"
         ),
+        "EXTENSIONS_FOLDER_PATH": "/geonode/static/mapstore/extensions/",
         "CUSTOM_FILTERS": getattr(settings, "MAPSTORE_CUSTOM_FILTERS", None),
         "TIME_ENABLED": getattr(settings, "UPLOADER", dict())
         .get("OPTIONS", dict())
