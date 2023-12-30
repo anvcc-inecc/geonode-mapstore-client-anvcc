@@ -5,6 +5,7 @@ from geonode.base.models import Configuration, Menu, MenuItem
 
 register = template.Library()
 
+FORCE_SCRIPT_NAME = getattr(settings, "FORCE_SCRIPT_NAME", "")
 
 def _get_request_user(context):
     request = context.get("request")
@@ -40,32 +41,32 @@ def get_base_left_topbar_menu(context):
             "items": [
                 {
                     "type": "link",
-                    "href": "/catalogue/#/search/?f=dataset",
+                    "href": f"{FORCE_SCRIPT_NAME}/catalogue/#/search/?f=dataset",
                     "label": "Datasets",
                 },
                 {
                     "type": "link",
-                    "href": "/catalogue/#/search/?f=document",
+                    "href": f"{FORCE_SCRIPT_NAME}/catalogue/#/search/?f=document",
                     "label": "Documents",
                 }
                 if not is_mobile
                 else None,
             ],
         },
-        {"type": "link", "href": "/catalogue/#/search/?f=map", "label": "Maps"},
+        {"type": "link", "href": f"{FORCE_SCRIPT_NAME}/catalogue/#/search/?f=map", "label": "Maps"},
         {
             "type": "link",
-            "href": "/catalogue/#/search/?f=geostory",
+            "href": f"{FORCE_SCRIPT_NAME}/catalogue/#/search/?f=geostory",
             "label": "GeoStories",
         },
         {
             "type": "link",
-            "href": "/catalogue/#/search/?f=dashboard",
+            "href": f"{FORCE_SCRIPT_NAME}/catalogue/#/search/?f=dashboard",
             "label": "Dashboards",
         },
         {
             "type": "link",
-            "href": "/catalogue/#/search/?f=featured",
+            "href": f"{FORCE_SCRIPT_NAME}/catalogue/#/search/?f=featured",
             "label": "Featured",
         },
     ]
@@ -84,8 +85,8 @@ def get_base_right_topbar_menu(context):
         "label": "About",
         "type": "dropdown",
         "items": [
-            {"type": "link", "href": "/people/", "label": "People"},
-            {"type": "link", "href": "/groups/", "label": "Groups"},
+            {"type": "link", "href": f"{FORCE_SCRIPT_NAME}/people/", "label": "People"},
+            {"type": "link", "href": f"{FORCE_SCRIPT_NAME}/groups/", "label": "Groups"},
         ],
     }
 
@@ -97,17 +98,17 @@ def get_base_right_topbar_menu(context):
                 {"type": "divider"},
                 {
                     "type": "link",
-                    "href": "/invitations/geonode-send-invite/",
+                    "href": f"{FORCE_SCRIPT_NAME}/invitations/geonode-send-invite/",
                     "label": "Invite users",
                 },
                 {
                     "type": "link",
-                    "href": "/admin/people/profile/add/",
+                    "href": f"{FORCE_SCRIPT_NAME}/admin/people/profile/add/",
                     "label": "Add user",
                 }
                 if user.is_superuser
                 else None,
-                {"type": "link", "href": "/groups/create/", "label": "Create group"}
+                {"type": "link", "href": f"{FORCE_SCRIPT_NAME}/groups/create/", "label": "Create group"}
                 if user.is_superuser
                 else None,
             ]
@@ -123,10 +124,10 @@ def get_user_menu(context):
 
     if not user or (user and not user.is_authenticated):
         return [
-            {"label": "Register", "type": "link", "href": "/account/signup/?next=/"}
+            {"label": "Register", "type": "link", "href": f"{FORCE_SCRIPT_NAME}/account/signup/?next=/"}
             if settings.ACCOUNT_OPEN_SIGNUP and not Configuration.load().read_only
             else None,
-            {"label": "Sign in", "type": "link", "href": "/account/login/?next=/"},
+            {"label": "Sign in", "type": "link", "href": f"{FORCE_SCRIPT_NAME}/account/login/?next=/"},
         ]
 
     devider = {"type": "divider"}
@@ -138,7 +139,7 @@ def get_user_menu(context):
         "label": "Profile",
     }
 
-    logout = {"type": "link", "href": "/account/logout/?next=/", "label": "Log out"}
+    logout = {"type": "link", "href": f"{FORCE_SCRIPT_NAME}/account/logout/?next=/", "label": "Log out"}
 
     if is_mobile:
         return [
@@ -160,28 +161,28 @@ def get_user_menu(context):
             profile_link,
             {
                 "type": "link",
-                "href": "/social/recent-activity",
+                "href": f"{FORCE_SCRIPT_NAME}/social/recent-activity",
                 "label": "Recent activity",
             },
             {
                 "type": "link",
-                "href": "/catalogue/#/search/?f=favorite",
+                "href": f"{FORCE_SCRIPT_NAME}/catalogue/#/search/?f=favorite",
                 "label": "Favorites",
             },
-            {"type": "link", "href": "/messages/inbox/", "label": "Inbox"},
+            {"type": "link", "href": f"{FORCE_SCRIPT_NAME}/messages/inbox/", "label": "Inbox"},
             devider,
         ],
     }
-    general = [{"type": "link", "href": "/help/", "label": "Help"}, devider, logout]
+    general = [{"type": "link", "href": f"{FORCE_SCRIPT_NAME}/help/", "label": "Help"}, devider, logout]
     monitoring = []
     if settings.MONITORING_ENABLED:
         monitoring = [
             devider,
-            {"type": "link", "href": "/monitoring/", "label": "Monitoring & Analytics"},
+            {"type": "link", "href": f"{FORCE_SCRIPT_NAME}/monitoring/", "label": "Monitoring & Analytics"},
         ]
     admin_only = (
         [
-            {"type": "link", "href": "/admin/", "label": "Admin"},
+            {"type": "link", "href": f"{FORCE_SCRIPT_NAME}/admin/", "label": "Admin"},
             {
                 "type": "link",
                 "href": settings.GEOSERVER_WEB_UI_LOCATION,
