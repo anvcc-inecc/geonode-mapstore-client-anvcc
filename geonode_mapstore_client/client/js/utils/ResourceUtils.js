@@ -714,8 +714,11 @@ export const getDownloadUrlInfo = (resource) => {
 };
 
 export const getCataloguePath = (path = '') => {
+    console.log("getCataloguePath path", path);
     const catalogPagePath = getGeoNodeLocalConfig('geoNodeSettings.catalogPagePath');
+    console.log("getCataloguePath catalogPagePath", catalogPagePath)
     if (!isEmpty(catalogPagePath)) {
+        console.log("not empty", path.replace('/catalogue/', catalogPagePath));
         return path.replace('/catalogue/', catalogPagePath);
     }
     return path;
