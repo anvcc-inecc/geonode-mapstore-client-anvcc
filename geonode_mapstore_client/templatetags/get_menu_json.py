@@ -186,7 +186,7 @@ def get_user_menu(context):
             },
             {
                 "type": "link",
-                "href": "/geonode/geonode/catalogue/#/search/?f=favorite",
+                "href": "/geonode/catalogue/#/search/?f=favorite",
                 "label": "Favorites"
             },
             {
