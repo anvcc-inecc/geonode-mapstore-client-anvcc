@@ -109,6 +109,7 @@ def get_base_right_topbar_menu(context):
             {
                 "type": "link",
                 "href": "/geonode/admin/people/profile/add/",
+                "target": '_blank',
                 "label": "Add user"
             } if user.is_superuser else None,
             {

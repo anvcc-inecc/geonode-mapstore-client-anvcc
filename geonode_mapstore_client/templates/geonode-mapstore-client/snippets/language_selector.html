@@ -3,7 +3,8 @@
 {% get_current_language as LANGUAGE %}
 {% get_language_info for LANGUAGE as lang_info %}
 
-<form id="gn-language-selector-form" action="/i18n/setlang/" method="post" style="display:none;">
+{% comment "Este comentario es para desaparecer el menu de lenguaje" %}
+<form id="gn-language-selector-form" action="/geonode/i18n/setlang/" method="post" style="display:none;">
     {% csrf_token %}
     <input name="language" type="hidden" value="{{ LANGUAGE }}"/>
     <input name="next" type="hidden" value="{{  window.location|safe }}"/>
@@ -88,4 +89,5 @@
             })();
         </script>
     {% endif %}
+{% endcomment %}
 {% endif %}
