@@ -867,7 +867,7 @@ export const uploadDocument = ({
     const formData = new FormData();
     formData.append('title', title);
     formData.append('doc_file', file);
-    return axios.post(`/documents/upload?no__redirect=true`, formData, config)
+    return axios.post(`/geonode/documents/upload?no__redirect=true`, formData, config)
         .then(({ data }) => (data));
 };
 

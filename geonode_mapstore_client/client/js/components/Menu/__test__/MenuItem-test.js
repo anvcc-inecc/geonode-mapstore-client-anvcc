@@ -17,19 +17,19 @@ const Item = {
     "items": [
         {
             "type": "link",
-            "href": "/datasets/?limit=5",
+            "href": "/geonode/datasets/?limit=5",
             "labelId": "gnhome.datasets",
             "badge": "${datasetsTotalCount}"
         },
         {
             "type": "link",
-            "href": "/documents/?limit=5",
+            "href": "/geonode/documents/?limit=5",
             "labelId": "gnhome.documents",
             "badge": "${documentsTotalCount}"
         },
         {
             "type": "link",
-            "href": "/services/?limit=5",
+            "href": "/geonode/services/?limit=5",
             "labelId": "gnhome.remoteServices"
         },
         {
@@ -38,19 +38,19 @@ const Item = {
         },
         {
             "type": "link",
-            "href": "/layers/upload",
+            "href": "/geonode/layers/upload",
             "labelId": "gnhome.uploadLayer",
             "authenticated": true
         },
         {
             "type": "link",
-            "href": "/documents/upload",
+            "href": "/geonode/documents/upload",
             "labelId": "gnhome.uploadDocument",
             "authenticated": true
         },
         {
             "type": "link",
-            "href": "/services/register/",
+            "href": "/geonode/services/register/",
             "labelId": "gnhome.addRemoteService",
             "authenticated": true,
             "allowedRoles": [
