@@ -57,7 +57,7 @@
             "category": "Catégorie",
             "categories": "Categories",
             "noPublicContentTitle": "Bienvenue dans GeoNode",
-            "noPublicContentContent": "Ce catalogue ne contient pas de ressources publiques. <br/> Veuillez vous <a href=\"/account/signup/?next=/\"> vous inscrire </a> ou <a href=\"/account/login/?next=/\"> vous connecter </a> pour parcourir le contenu. ",
+            "noPublicContentContent": "Ce catalogue ne contient pas de ressources publiques. <br/> Veuillez vous <a href=\"/geonode/account/signup/?next=/\"> vous inscrire </a> ou <a href=\"/geonode/account/login/?next=/\"> vous connecter </a> pour parcourir le contenu. ",
             "noContentYetTitle": "Bienvenue dans GeoNode",
             "noContentYetContent": "Ce catalogue n'a pas encore de contenu publié. <br/> Nous travaillons à le remplir avec d'excellentes ressources. <br/> <br/> Restez à l'écoute!",
             "errorResourcePageTitle": "Erreur de chargement de la page",

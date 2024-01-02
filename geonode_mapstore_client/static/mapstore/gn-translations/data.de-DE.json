@@ -57,7 +57,7 @@
             "category": "Kategorie",
             "categories": "Kategorien",
             "noPublicContentTitle": "Willkommen bei GeoNode",
-            "noPublicContentContent": "Dieser Katalog verfügt über keine öffentlichen Ressourcen. <br/> Bitte <a href=\"/account/signup/?next=/\"> registrieren </a> oder <a href=\"/account/login/?next=/\"> anmelden </a>, um den Inhalt zu durchsuchen.",
+            "noPublicContentContent": "Dieser Katalog verfügt über keine öffentlichen Ressourcen. <br/> Bitte <a href=\"/geonode/account/signup/?next=/\"> registrieren </a> oder <a href=\"/geonode/account/login/?next=/\"> anmelden </a>, um den Inhalt zu durchsuchen.",
             "noContentYetTitle": "Willkommen bei GeoNode",
             "noContentYetContent": "Dieser Katalog hat noch keine veröffentlichten Inhalte. <br/> Wir arbeiten daran, ihn mit großartigen Ressourcen zu füllen. <br/> <br/> Bleiben Sie dran!",
             "errorResourcePageTitle": "Fehler beim Laden der Seite",

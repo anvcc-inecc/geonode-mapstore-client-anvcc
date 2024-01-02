@@ -10,7 +10,7 @@
                 },
                 "title": "GeoNode Catalogue",
                 "type": "csw",
-                "url": "/catalogue/csw"
+                "url": "/geonode/catalogue/csw"
             }
         }
     },
