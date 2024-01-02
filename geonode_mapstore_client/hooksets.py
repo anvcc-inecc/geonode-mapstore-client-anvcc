@@ -18,10 +18,10 @@ from geonode.client.hooksets import BaseHookSet
 from geonode.base.models import ResourceBase
 
 def resource_list_url(resource_type):
-    return '/catalogue/#/search/?filter{resource_type.in}' + '={}'.format(resource_type)
+    return '/geonode/catalogue/#/search/?filter{resource_type.in}' + '={}'.format(resource_type)
 
 def resource_detail_url(resource_type, resource_id):
-    return '/catalogue/#/{}/{}'.format(resource_type, resource_id)
+    return '/geonode/catalogue/#/{}/{}'.format(resource_type, resource_id)
 
 
 class MapStoreHookSet(BaseHookSet):
@@ -76,7 +76,7 @@ class MapStoreHookSet(BaseHookSet):
         return resource_list_url('dataset')
 
     def dataset_upload_url(self):
-        return '/catalogue/#/upload/dataset'
+        return '/geonode/catalogue/#/upload/dataset'
 
     def dataset_detail_url(self, resource):
         return resource_detail_url('dataset', resource.id)
