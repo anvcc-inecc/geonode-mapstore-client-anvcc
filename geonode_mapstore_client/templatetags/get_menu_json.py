@@ -33,34 +33,34 @@ def get_base_left_topbar_menu(context):
             "items": [
                 {
                     "type": "link",
-                    "href": "/catalogue/#/search/?f=dataset",
+                    "href": "/geonode/catalogue/#/search/?f=dataset",
                     "label": "Datasets"
                 },
                 {
                     "type": "link",
-                    "href": "/catalogue/#/search/?f=document",
+                    "href": "/geonode/catalogue/#/search/?f=document",
                     "label": "Documents"
                 } if not is_mobile else None
             ]
         },
         {
             "type": "link",
-            "href": "/catalogue/#/search/?f=map",
+            "href": "/geonode/catalogue/#/search/?f=map",
             "label": "Maps"
         },
         {
             "type": "link",
-            "href": "/catalogue/#/search/?f=geostory",
+            "href": "/geonode/catalogue/#/search/?f=geostory",
             "label": "GeoStories"
         },
         {
             "type": "link",
-            "href": "/catalogue/#/search/?f=dashboard",
+            "href": "/geonode/catalogue/#/search/?f=dashboard",
             "label": "Dashboards"
         },
         {
             "type": "link",
-            "href": "/catalogue/#/search/?f=featured",
+            "href": "/geonode/catalogue/#/search/?f=featured",
             "label": "Featured"
         }
     ]
@@ -186,7 +186,7 @@ def get_user_menu(context):
             },
             {
                 "type": "link",
-                "href": "/catalogue/#/search/?f=favorite",
+                "href": "/geonode/catalogue/#/search/?f=favorite",
                 "label": "Favorites"
             },
             {

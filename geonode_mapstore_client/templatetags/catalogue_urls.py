@@ -15,5 +15,5 @@ def catalogue_home(context):
         elif current_path.find('/catalogue') == 0:
             return "#"
         else:
-            return "/catalogue/#"
+            return "/geonode/catalogue/#"
     return ""
