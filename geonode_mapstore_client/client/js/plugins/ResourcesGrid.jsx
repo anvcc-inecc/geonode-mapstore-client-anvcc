@@ -176,7 +176,7 @@ function PaginationCustom({
   *        defaultQuery: {
   *          f: 'dataset'
   *        },
-  *        pagePath: '/catalogue/',
+  *        pagePath: '/geonode/catalogue/',
   *        pagination: false,
   *        disableDetailPanel: true,
   *        disableFilters: true,
@@ -253,44 +253,44 @@ function ResourcesGrid({
                     labelId: 'gnhome.uploadDataset',
                     value: 'layer',
                     type: 'link',
-                    href: '/catalogue/#/upload/dataset'
+                    href: '/geonode/catalogue/#/upload/dataset'
                 },
                 {
                     labelId: 'gnhome.uploadDocument',
                     value: 'document',
                     type: 'link',
-                    href: '/catalogue/#/upload/document'
+                    href: '/geonode/catalogue/#/upload/document'
                 },
                 {
                     labelId: 'gnhome.createDataset',
                     value: 'layer',
                     type: 'link',
-                    href: '/createlayer/',
+                    href: '/geonode/createlayer/',
                     disableIf: "{(state('settings') && state('settings').createLayer) ? false : true}"
                 },
                 {
                     labelId: 'gnhome.createMap',
                     value: 'map',
                     type: 'link',
-                    href: '/catalogue/#/map/new'
+                    href: '/geonode/catalogue/#/map/new'
                 },
                 {
                     labelId: 'gnhome.createGeostory',
                     value: 'geostory',
                     type: 'link',
-                    href: '/catalogue/#/geostory/new'
+                    href: '/geonode/catalogue/#/geostory/new'
                 },
                 {
                     labelId: 'gnhome.createDashboard',
                     value: 'dashboard',
                     type: 'link',
-                    href: '/catalogue/#/dashboard/new'
+                    href: '/geonode/catalogue/#/dashboard/new'
                 },
                 {
                     labelId: 'gnhome.remoteServices',
                     value: 'remote',
                     type: 'link',
-                    href: '/services/?limit=5'
+                    href: '/geonode/services/?limit=5'
                 }
             ]
         },
@@ -444,7 +444,7 @@ function ResourcesGrid({
     pagination,
     disableDetailPanel,
     disableFilters,
-    filterPagePath = '/catalogue/#/search/filter',
+    filterPagePath = '/geonode/catalogue/#/search/filter',
     resourceCardActionsOrder = [
         ProcessTypes.DELETE_RESOURCE,
         ProcessTypes.COPY_RESOURCE,
