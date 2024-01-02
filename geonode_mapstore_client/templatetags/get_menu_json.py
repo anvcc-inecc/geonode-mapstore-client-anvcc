@@ -86,12 +86,12 @@ def get_base_right_topbar_menu(context):
             "items": [
                 {
                     "type": "link",
-                    "href": "/people/",
+                    "href": "/geonode/people/",
                     "label": "People"
                 },
                 {
                     "type": "link",
-                    "href": "/groups/",
+                    "href": "/geonode/groups/",
                     "label": "Groups"
                 }
             ]
@@ -103,17 +103,17 @@ def get_base_right_topbar_menu(context):
             },
             {
                 "type": "link",
-                "href": "/invitations/geonode-send-invite/",
+                "href": "/geonode/invitations/geonode-send-invite/",
                 "label": "Invite users"
             },
             {
                 "type": "link",
-                "href": "/admin/people/profile/add/",
+                "href": "/geonode/admin/people/profile/add/",
                 "label": "Add user"
             } if user.is_superuser else None,
             {
                 "type": "link",
-                "href": "/groups/create/",
+                "href": "/geonode/groups/create/",
                 "label": "Create group"
             }if user.is_superuser else None,
         ])
@@ -131,12 +131,12 @@ def get_user_menu(context):
             {
                 "label": "Register",
                 "type": "link",
-                "href": "/account/signup/?next=/"
+                "href": "/geonode/account/signup/?next=/"
             } if settings.ACCOUNT_OPEN_SIGNUP and not Configuration.load().read_only else None,
             {
                 "label": "Sign in",
                 "type": "link",
-                "href": "/account/login/?next=/"
+                "href": "/geonode/account/login/?next=/"
             },
         ]
 
@@ -153,7 +153,7 @@ def get_user_menu(context):
 
     logout = {
         "type": "link",
-        "href": "/account/logout/?next=/",
+        "href": "/geonode/account/logout/?next=/",
         "label": "Log out"
     }
 
@@ -181,17 +181,17 @@ def get_user_menu(context):
             profile_link,
             {
                 "type": "link",
-                "href": "/social/recent-activity",
+                "href": "/geonode/social/recent-activity",
                 "label": "Recent activity"
             },
             {
                 "type": "link",
-                "href": "/geonode/catalogue/#/search/?f=favorite",
+                "href": "/geonode/geonode/catalogue/#/search/?f=favorite",
                 "label": "Favorites"
             },
             {
                 "type": "link",
-                "href": "/messages/inbox/",
+                "href": "/geonode/messages/inbox/",
                 "label": "Inbox"
             },
             devider,
@@ -200,7 +200,7 @@ def get_user_menu(context):
     general = [
         {
             "type": "link",
-            "href": "/help/",
+            "href": "/geonode/help/",
             "label": "Help"
         },
         devider,
@@ -212,14 +212,14 @@ def get_user_menu(context):
             devider,
             {
                 "type": "link",
-                "href": "/monitoring/",
+                "href": "/geonode/monitoring/",
                 "label": "Monitoring & Analytics"
             }
         ]
     admin_only = [
         {
             "type": "link",
-            "href": "/admin/",
+            "href": "/geonode/admin/",
             "label": "Admin"
         },
         {
