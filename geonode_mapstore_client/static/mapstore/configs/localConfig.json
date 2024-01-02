@@ -4,8 +4,8 @@
         "useCORS": []
     },
     "geoNodeApi": {
-        "endpointV1": "/api",
-        "endpointV2": "/api/v2"
+        "endpointV1": "/geonode/api",
+        "endpointV2": "/geonode/api/v2"
     },
     "mapLayout": {
         "preview": {
@@ -78,18 +78,6 @@
         "en": {
             "code": "en-US",
             "description": "English"
-        },
-        "it": {
-            "code": "it-IT",
-            "description": "Italiano"
-        },
-        "fr": {
-            "code": "fr-FR",
-            "description": "Français"
-        },
-        "de": {
-            "code": "de-DE",
-            "description": "Deutsch"
         },
         "es": {
             "code": "es-ES",
@@ -534,7 +522,7 @@
                                 },
                                 {
                                     "type": "link",
-                                    "href": "{'#/dataset/' + (state('gnResourceData') || {}).pk + '/edit/data'}",
+                                    "href": "{'geonode/#/dataset/' + (state('gnResourceData') || {}).pk + '/edit/data'}",
                                     "labelId": "gnviewer.viewData",
                                     "disableIf": "{state('gnResourceData') && (state('gnResourceData').subtype === 'raster' || state('gnResourceData').subtype === 'remote')}"
                                 }
@@ -551,13 +539,13 @@
                                 },
                                 {
                                     "type": "link",
-                                    "href": "{'#/dataset/' + (state('gnResourceData') || {}).pk + '/edit/data'}",
+                                    "href": "{'geonode/#/dataset/' + (state('gnResourceData') || {}).pk + '/edit/data'}",
                                     "labelId": "gnviewer.editData",
                                     "disableIf": "{!context.resourceHasPermission(state('gnResourceData'), 'change_dataset_data')}"
                                 },
                                 {
                                     "type": "link",
-                                    "href": "{'#/dataset/' + (state('gnResourceData') || {}).pk + '/edit/style'}",
+                                    "href": "{'geonode/#/dataset/' + (state('gnResourceData') || {}).pk + '/edit/style'}",
                                     "labelId": "gnviewer.editStyle",
                                     "disableIf": "{!context.resourceHasPermission(state('gnResourceData'), 'change_dataset_style')}"
                                 },
@@ -568,13 +556,13 @@
                                 },
                                 {
                                     "type": "link",
-                                    "href": "{'/datasets/' + (state('gnResourceData') || {}).alternate + '/style_upload'}",
+                                    "href": "{'/geonode/datasets/' + (state('gnResourceData') || {}).alternate + '/style_upload'}",
                                     "labelId": "gnviewer.styleUpload",
                                     "disableIf": "{!context.resourceHasPermission(state('gnResourceData'), 'change_dataset_style')}"
                                 },
                                 {
                                     "type": "link",
-                                    "href": "{'/datasets/' + (state('gnResourceData') || {}).alternate + '/metadata_upload'}",
+                                    "href": "{'/geonode/datasets/' + (state('gnResourceData') || {}).alternate + '/metadata_upload'}",
                                     "labelId": "gnviewer.metadataUpload"
                                 }
                             ]
@@ -625,7 +613,7 @@
                         },
                         {
                             "type": "link",
-                            "href": "{'#/map/new?gn-dataset=' + (state('gnResourceData') || {}).pk}",
+                            "href": "{'geonode/#/map/new?gn-dataset=' + (state('gnResourceData') || {}).pk}",
                             "labelId": "gnviewer.createMap",
                             "disableIf": "{!(state('user') && state('user').perms && state('user').perms.includes('add_resource'))}"
                         }
@@ -678,7 +666,7 @@
                                 {
                                     "type": "link",
                                     "labelId": "gnviewer.owner",
-                                    "href": "{'/people/profile/' + context.get(state('gnResourceData'), 'owner.username')}",
+                                    "href": "{'/geonode/people/profile/' + context.get(state('gnResourceData'), 'owner.username')}",
                                     "value": "{context.getUserResourceName(context.get(state('gnResourceData'), 'owner'))}",
                                     "disableIf": "{!context.get(state('gnResourceData'), 'owner.username')}"
                                 },
@@ -721,7 +709,7 @@
                                 {
                                     "type": "link",
                                     "labelId": "gnviewer.pointOfContact",
-                                    "href": "{'/people/profile/' + context.get(state('gnResourceData'), 'poc.username')}",
+                                    "href": "{'/geonode/people/profile/' + context.get(state('gnResourceData'), 'poc.username')}",
                                     "value": "{context.getUserResourceName(context.get(state('gnResourceData'), 'poc'))}",
                                     "disableIf": "{!context.get(state('gnResourceData'), 'poc.username')}"
                                 },
@@ -1177,7 +1165,7 @@
                     "leftMenuItems": [
                         {
                             "type": "link",
-                            "href": "{'#/dataset/' + (state('gnResourceData') || {}).pk}",
+                            "href": "{'geonode/#/dataset/' + (state('gnResourceData') || {}).pk}",
                             "labelId": "gnviewer.goBackTo"
                         }
                     ]
@@ -1312,7 +1300,7 @@
                     "leftMenuItems": [
                         {
                             "type": "link",
-                            "href": "{'#/dataset/' + (state('gnResourceData') || {}).pk}",
+                            "href": "{'geonode/#/dataset/' + (state('gnResourceData') || {}).pk}",
                             "labelId": "gnviewer.goBackTo"
                         }
                     ],
@@ -1553,7 +1541,7 @@
                                 {
                                     "type": "link",
                                     "labelId": "gnviewer.owner",
-                                    "href": "{'/people/profile/' + context.get(state('gnResourceData'), 'owner.username')}",
+                                    "href": "{'/geonode/people/profile/' + context.get(state('gnResourceData'), 'owner.username')}",
                                     "value": "{context.getUserResourceName(context.get(state('gnResourceData'), 'owner'))}",
                                     "disableIf": "{!context.get(state('gnResourceData'), 'owner.username')}"
                                 },
@@ -1596,7 +1584,7 @@
                                 {
                                     "type": "link",
                                     "labelId": "gnviewer.pointOfContact",
-                                    "href": "{'/people/profile/' + context.get(state('gnResourceData'), 'poc.username')}",
+                                    "href": "{'/geonode/people/profile/' + context.get(state('gnResourceData'), 'poc.username')}",
                                     "value": "{context.getUserResourceName(context.get(state('gnResourceData'), 'poc'))}",
                                     "disableIf": "{!context.get(state('gnResourceData'), 'poc.username')}"
                                 },
@@ -2063,7 +2051,7 @@
                 "cfg": {
                     "measurementAnnotationEdit": false,
                     "geodesic": false,
-                    "symbolsPath": "/static/mapstore/symbols/"
+                    "symbolsPath": "/geonode/static/mapstore/symbols/"
                 }
             },
             {
@@ -2197,7 +2185,7 @@
                                 {
                                     "type": "link",
                                     "labelId": "gnviewer.owner",
-                                    "href": "{'/people/profile/' + context.get(state('gnResourceData'), 'owner.username')}",
+                                    "href": "{'/geonode/people/profile/' + context.get(state('gnResourceData'), 'owner.username')}",
                                     "value": "{context.getUserResourceName(context.get(state('gnResourceData'), 'owner'))}",
                                     "disableIf": "{!context.get(state('gnResourceData'), 'owner.username')}"
                                 },
@@ -2240,7 +2228,7 @@
                                 {
                                     "type": "link",
                                     "labelId": "gnviewer.pointOfContact",
-                                    "href": "{'/people/profile/' + context.get(state('gnResourceData'), 'poc.username')}",
+                                    "href": "{'/geonode/people/profile/' + context.get(state('gnResourceData'), 'poc.username')}",
                                     "value": "{context.getUserResourceName(context.get(state('gnResourceData'), 'poc'))}",
                                     "disableIf": "{!context.get(state('gnResourceData'), 'poc.username')}"
                                 },
@@ -2508,7 +2496,7 @@
                                 {
                                     "type": "link",
                                     "labelId": "gnviewer.owner",
-                                    "href": "{'/people/profile/' + context.get(state('gnResourceData'), 'owner.username')}",
+                                    "href": "{'/geonode/people/profile/' + context.get(state('gnResourceData'), 'owner.username')}",
                                     "value": "{context.getUserResourceName(context.get(state('gnResourceData'), 'owner'))}",
                                     "disableIf": "{!context.get(state('gnResourceData'), 'owner.username')}"
                                 },
@@ -2551,7 +2539,7 @@
                                 {
                                     "type": "link",
                                     "labelId": "gnviewer.pointOfContact",
-                                    "href": "{'/people/profile/' + context.get(state('gnResourceData'), 'poc.username')}",
+                                    "href": "{'/geonode/people/profile/' + context.get(state('gnResourceData'), 'poc.username')}",
                                     "value": "{context.getUserResourceName(context.get(state('gnResourceData'), 'poc'))}",
                                     "disableIf": "{!context.get(state('gnResourceData'), 'poc.username')}"
                                 },
@@ -2737,7 +2725,7 @@
                                 {
                                     "type": "link",
                                     "labelId": "gnviewer.owner",
-                                    "href": "{'/people/profile/' + context.get(state('gnResourceData'), 'owner.username')}",
+                                    "href": "{'/geonode/people/profile/' + context.get(state('gnResourceData'), 'owner.username')}",
                                     "value": "{context.getUserResourceName(context.get(state('gnResourceData'), 'owner'))}",
                                     "disableIf": "{!context.get(state('gnResourceData'), 'owner.username')}"
                                 },
@@ -2780,7 +2768,7 @@
                                 {
                                     "type": "link",
                                     "labelId": "gnviewer.pointOfContact",
-                                    "href": "{'/people/profile/' + context.get(state('gnResourceData'), 'poc.username')}",
+                                    "href": "{'/geonode/people/profile/' + context.get(state('gnResourceData'), 'poc.username')}",
                                     "value": "{context.getUserResourceName(context.get(state('gnResourceData'), 'poc'))}",
                                     "disableIf": "{!context.get(state('gnResourceData'), 'poc.username')}"
                                 },
@@ -3259,7 +3247,7 @@
                                 {
                                     "type": "link",
                                     "labelId": "gnviewer.owner",
-                                    "href": "{'/people/profile/' + context.get(state('gnResourceData'), 'owner.username')}",
+                                    "href": "{'/geonode/people/profile/' + context.get(state('gnResourceData'), 'owner.username')}",
                                     "value": "{context.getUserResourceName(context.get(state('gnResourceData'), 'owner'))}",
                                     "disableIf": "{!context.get(state('gnResourceData'), 'owner.username')}"
                                 },
@@ -3302,7 +3290,7 @@
                                 {
                                     "type": "link",
                                     "labelId": "gnviewer.pointOfContact",
-                                    "href": "{'/people/profile/' + context.get(state('gnResourceData'), 'poc.username')}",
+                                    "href": "{'/geonode/people/profile/' + context.get(state('gnResourceData'), 'poc.username')}",
                                     "value": "{context.getUserResourceName(context.get(state('gnResourceData'), 'poc'))}",
                                     "disableIf": "{!context.get(state('gnResourceData'), 'poc.username')}"
                                 },

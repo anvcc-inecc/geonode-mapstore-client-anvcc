@@ -30,11 +30,11 @@
                 {% block left_menu %}
                 <ul class="gn-menu-list">
                     <li>
-                        <a href="{% block logo_href %}{% catalogue_home %}{% endblock %}">
+                        <a href="{% block logo_href %}/geonode/{% endblock %}">
                             {% if custom_theme.logo and custom_theme.logo.url %}
                                 <img src="{{ custom_theme.logo.url }}">
                             {% else %}
-                                <img src="{% block logo_src %}/static/mapstore/img/geonode-logo.svg{% endblock %}">
+                                <img src="{% block logo_src %} /geonode/static/mapstore/img/geonode-logo.svg{% endblock %}">
                             {% endif %}
                         </a>
                     </li>
