@@ -64,7 +64,7 @@
                                 name: 'FeaturedResourcesGrid',
                                 cfg: {
                                     targetSelector: '#gn-home-featured-resources-grid',
-                                    pagePath: '/catalogue/'
+                                    pagePath: '/geonode/catalogue/'
                                 }
                             },
                             {
@@ -73,7 +73,7 @@
                                     targetSelector: '#gn-home-resources-grid',
                                     containerSelector: '#gn-home-resources-grid',
                                     pagination: false,
-                                    pagePath: '/catalogue/',
+                                    pagePath: '/geonode/catalogue/',
                                     disableFilters: true,
                                     disableDetailPanel: true,
                                     enableGeoNodeCardsMenuItems: true
@@ -92,7 +92,7 @@
                 {% endblock %}
     
                 {% block footer %}
-                    {% include './geonode-mapstore-client/snippets/footer.html' %}
+                    {# % include './geonode-mapstore-client/snippets/footer.html' % #}
                 {% endblock %}
     
                 {% block scripts %}
